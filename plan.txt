@@ -1,1 +1,12 @@
-plan.txt
+1. npm -init -y
+2. create folder structure
+3. install app dependences
+4. create express server - Create server.js file
+5. Git setup and first commit
+6. install Laravel Mix
+    - setup js and scss
+7. install tailwind css
+8. created page layout
+9. create hero and card component
+10. create login and register page
+npx mix watch 
