@@ -9,4 +9,10 @@
 8. created page layout
 9. create hero and card component
 10. create login and register page
+11. create routes and controllers
+12. connect to mongodb database
+13. fetch all pizzas (dynamix ejas query)
+14. Add to cart and cart module.
+15. login system
+
 npx mix watch 
