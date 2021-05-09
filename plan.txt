@@ -14,5 +14,5 @@
 13. fetch all pizzas (dynamix ejas query)
 14. Add to cart and cart module.
 15. login system
-
+16. order page and place order functinality
 npx mix watch 
