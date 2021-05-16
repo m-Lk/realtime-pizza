@@ -16,8 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Database connection
-const url = 'mongodb://localhost/pizza'
-mongoose.connect(url, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
@@ -45,7 +44,7 @@ app.use(session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
     store: MongoDbStore.create({
-        mongoUrl: url,
+        mongoUrl: process.env.MONGO_URL,
         touchAfter: 24 * 3600
     }),
     saveUninitialized: false,
@@ -81,6 +80,9 @@ app.set('views', path.join(__dirname, '/resources/views'));
 app.set('view engine', 'ejs');
 
 require('./routes/web')(app);
+app.use((req, res) => {
+    return res.status(404).render('errors/404')
+});
 
 const server = app.listen(PORT, () => {
     console.log(`Server is runing on port ${PORT}`);
